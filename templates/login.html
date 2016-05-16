@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+<h1> hello </h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Login</title>
+	<link rel="stylesheet" type="text/css" href="goodlooks.css">
+</head>
+
+{% block content %}
+<body>
+
+<style>
+body {
+    background-color: silver;
+}
+</style>
+
+<h1>Enter Your Login Information</h1>
+	<form action="/login" method="POST" class="form-inline">
+		<div class="form-group">
+			<label class="sr-only" for="email">Email address:</label>
+			<input type="email" class="form-control" name="email">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="password">Password:</label>
+			<input type="password" class="form-control" name="password">
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+
+	
+	</form>
+</body>
+
+{% endblock %}
+</html>

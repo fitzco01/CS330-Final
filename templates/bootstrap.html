@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <title>Bootstrap</title>
+    <link rel="stylesheet" type="text/css" href="goodlooks.css">
+</head>
+<body>
+
+<style>
+body {
+    background-color: silver;
+}
+</style>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>CS 330 Final</h1>
+    <p>Class table using SQLAlchemy, WTForms, AJAX, Heroku and Bootstrap</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Requirement 1</h3>
+      <p>You must have at least three controllers (Think python functions with @app.route decorators)</p>
+      <p>You must have at least three views (Think templates)</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Requirement 2</h3>
+      <p>You should deploy your project on Heroku, appengine, or some other free hosting site so that it is freely accessable and not on the Luther network.</p>
+      <p>You should incorporate the WTForms module into your application for processing form data.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Requirement 3</h3> 
+      <p>You should provide a small AJAX API for some aspect of the project that you use in your web pages. Or you may incorporate some other more advanced Flask Plugin that you OK with me.</p>
+      <p>Your program must use the bootstrap templates, and you must make an attempt to make it look aesthetically nice.</p>
+    </div>
+  </div>
+</div>
+</body>
+
+{% endblock %}

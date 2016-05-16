@@ -1,0 +1,70 @@
+<!-- 
+
+unhash to generate html for the studnets table
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student API</title>
+    <link rel="stylesheet" type="text/css" href="goodlooks.css">
+</head>
+<body>
+
+<style>
+body {
+    background-color: silver;
+}
+</style>
+
+<h1>Students</h1>
+
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+
+<table id='studenttable'>
+</table>
+
+<script type="text/javascript">
+
+function showStudents() {
+    var obj = new XMLHttpRequest()
+    obj.open("GET", "/students", true);
+    obj.onreadystatechange = function () {
+        if (obj.readyState == 4 && obj.status == 200) {
+            finaldb = JSON.parse(obj.responseText);
+            t = document.querySelector("#studenttable");
+            for(i in finaldb.studentlist) {
+                td = document.createElement("td")
+                tr = document.createElement("tr")
+                td.innerHTML = finaldb.studentlist[i].student
+                tr.appendChild(td);
+                td = document.createElement("td")
+                td.innerHTML = finaldb.studentlist[i].classname
+                tr.appendChild(td);
+                t.appendChild(tr);
+            }
+        }
+    };
+    obj.send()
+}
+
+</script>
+
+<button onclick="showStudents();">Show Students</button>
+
+</body>
+</html>
+
+{% endblock %} -->

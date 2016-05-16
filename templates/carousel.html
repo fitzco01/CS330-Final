@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+  <title>Carousel</title>
+  <link rel="stylesheet" type="text/css" href="goodlooks.css">
+</head>
+
+<body>
+
+<style>
+body {
+    background-color: silver;
+}
+</style>
+
+<div class="c-wrapper">
+<div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img class="img-responsive center-block" src="http://www.luther.edu/reason/sized_images/551588/4811a85d604b4d4dac88311903f70864.jpg">
+      <div class="carousel-caption">
+        Luther College
+      </div>
+    </div>
+        <div class="item">
+      <img class="img-responsive center-block" src="https://upload.wikimedia.org/wikipedia/commons/1/10/LutherCollege.jpg">
+      <div class="carousel-caption">
+        Luther College Sign in the Snow
+      </div>
+    </div>
+    <div class="item">
+      <img class="img-responsive center-block" src="https://www.luther.edu/reason/images/420494_orig.jpg">
+      <div class="carousel-caption">
+        Luther College Bell
+      </div>
+    </div>
+    <div class="item">
+      <img class="img-responsive center-block" src="https://www.luther.edu/reason/sized_images/628060/b296e48dc79e24723b640e1ebc8232ea.jpg?cb=1432755890">
+      <div class="carousel-caption">
+        Brentdahl Commons
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>
+</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLASS API</title>
+    <link rel="stylesheet" type="text/css" href="goodlooks.css">
+</head>
+
+<body>
+<h1>A Table of Classes</h1>
+<h5>The classname, professor, and location are shown</h5>
+<h5>The entire table is added to the existing table</h5>
+<h5>Every time the 'Show Classes' button is clicked</h5>
+
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+
+body {
+    background-color: silver;
+}
+</style>
+
+<table id='tableclass'>
+</table>
+
+<script type="text/javascript">
+
+function showClasses() {
+    var obj = new XMLHttpRequest()
+    obj.open("GET", "/classes", true);
+    obj.onreadystatechange = function () {
+        if (obj.readyState == 4 && obj.status == 200) {
+            finaldb = JSON.parse(obj.responseText);
+            t = document.querySelector("#tableclass");
+            for(i in finaldb.schoollist) {
+                td = document.createElement("td")
+                tr = document.createElement("tr")
+                td.innerHTML = finaldb.schoollist[i].classname
+                tr.appendChild(td);
+                td = document.createElement("td")
+                td.innerHTML = finaldb.schoollist[i].professor
+                tr.appendChild(td);
+                td = document.createElement("td")
+                td.innerHTML = finaldb.schoollist[i].location
+                tr.appendChild(td);
+                t.appendChild(tr);
+            }
+        }
+    };
+    obj.send()
+}
+
+</script>
+
+<button onclick="showClasses();">Show Classes</button>
+
+</body>
+</html>
+
+{% endblock %}
